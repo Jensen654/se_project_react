@@ -1,0 +1,17 @@
+.modal__image {
+  width: 498px;
+  height: 498px;
+}
+
+.modal__info {
+  padding: 20px 0 32px 32px;
+}
+
+.modal__item-name {
+  margin: 0;
+  margin-bottom: 12px;
+}
+
+.modal__weather-description {
+  margin: 0;
+}

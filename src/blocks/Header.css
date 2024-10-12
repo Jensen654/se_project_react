@@ -1,0 +1,38 @@
+.header {
+  max-width: 1360px;
+  max-height: 40px;
+  display: flex;
+  padding: 32px 0 28px 0;
+  align-items: center;
+}
+
+.header__button {
+  margin-left: auto;
+  background-color: #f3f3f3;
+  cursor: pointer;
+}
+
+.header__user_container {
+  display: flex;
+  align-items: center;
+}
+
+.header__logo {
+  padding-right: 24px;
+  max-width: 89px;
+  max-height: 40px;
+}
+
+.header__button {
+  border: none;
+  padding-right: 20px;
+}
+
+.header__user_name {
+  padding-right: 12px;
+}
+
+.header__avatar {
+  height: 40px;
+  width: 40px;
+}
