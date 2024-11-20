@@ -9,6 +9,8 @@ import ModalWithForm from "./ModalWithForm";
 import ItemModal from "./ItemModal";
 import { getWeather, filterWeatherData } from "../utils/weatherApi";
 
+import { TempContext } from "../utils/contexts.js";
+
 function App() {
   const [weatherData, setWeatherData] = useState({
     type: "",
@@ -19,6 +21,7 @@ function App() {
   });
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
+  const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
 
   const handleCardClick = (card) => {
     setActiveModal("preview");
@@ -45,6 +48,7 @@ function App() {
 
   return (
     <div className="page">
+      {/* <TempContext.Provider value={tempType}> */}
       <div className="page__content">
         <Header handleAddClick={handleAddClick} weatherData={weatherData} />
         <Main weatherData={weatherData} handleCardClick={handleCardClick} />
@@ -111,6 +115,7 @@ function App() {
         handleCloseClick={handleCloseClick}
         isOpen={activeModal === "add-garment"}
       />
+      {/* </TempContext.Provider> */}
     </div>
   );
 }

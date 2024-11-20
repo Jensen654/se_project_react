@@ -1,0 +1,62 @@
+.toggle-temperature__label {
+  display: flex;
+  margin-left: auto;
+  margin-right: 20px;
+  border: 2px solid rgb(126, 126, 126);
+  border-radius: 15px;
+  background-color: white;
+  width: 52px;
+  height: 24px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.2s;
+}
+
+.toggle-temperature__button {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+.toggle-temperature__span {
+  position: absolute;
+  left: -2px;
+  width: 28px;
+  height: 28px;
+  border-radius: 20px;
+  transition: 0.2s;
+  background: black;
+}
+
+.toggle-temperature__f {
+  width: 28px;
+  height: 28px;
+  align-content: center;
+  text-align: center;
+  color: white;
+}
+
+.toggle-temperature__c {
+  width: 28px;
+  height: 28px;
+  align-content: center;
+  text-align: center;
+  color: rgb(126, 126, 126);
+}
+
+.toggle-temperature__text {
+  z-index: 1;
+}
+
+.toggle-temperature__button:checked
+  + .toggle-temperature__label:active
+  .toggle-temperature__span {
+  left: calc(100% + 2px);
+  transform: translateX(-100%);
+}
+
+.toggle-temperature__label:hover .toggle-temperature__span {
+  width: 30px;
+}
