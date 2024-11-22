@@ -38,6 +38,10 @@
   color: white;
 }
 
+.toggle-temperature__button:checked ~ .toggle-temperature__f {
+  color: rgb(126, 126, 126);
+}
+
 .toggle-temperature__c {
   width: 28px;
   height: 28px;
@@ -46,13 +50,15 @@
   color: rgb(126, 126, 126);
 }
 
+.toggle-temperature__button:checked ~ .toggle-temperature__c {
+  color: white;
+}
+
 .toggle-temperature__text {
   z-index: 1;
 }
 
-.toggle-temperature__button:checked
-  + .toggle-temperature__label:active
-  .toggle-temperature__span {
+.toggle-temperature__button:checked + .toggle-temperature__span {
   left: calc(100% + 2px);
   transform: translateX(-100%);
 }

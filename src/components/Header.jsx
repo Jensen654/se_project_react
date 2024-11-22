@@ -1,11 +1,11 @@
-import { useContext } from "react";
+import { React, useContext, useState } from "react";
 
 import "../blocks/Header.css";
 
 import headerLogo from "../images/logo.svg";
 import avatar from "../images/avatar.png";
 import ToggleSwitch from "./ToggleSwitch";
-import { TempContext } from "../utils/contexts";
+import { CurrentTemperatureUnitContext } from "../contexts/CurrentTemperatureUnitContext.js";
 
 function Header({ handleAddClick, weatherData }) {
   const currentDate = new Date().toLocaleString("default", {
@@ -13,7 +13,12 @@ function Header({ handleAddClick, weatherData }) {
     day: "numeric",
   });
 
-  const TempCon = useContext(TempContext);
+  // const handleToggleSwitchChange = () => {
+  //   setChecked(!checked);
+  //   console.log(checked);
+  // };
+
+  const TempCon = useContext(CurrentTemperatureUnitContext);
 
   return (
     <header className="header">
@@ -21,7 +26,10 @@ function Header({ handleAddClick, weatherData }) {
       <p className="header__date-and-location">
         {currentDate}, {weatherData.city}
       </p>
-      <ToggleSwitch />
+      <ToggleSwitch
+        value={TempCon.checked}
+        onTempClick={TempCon.handleToggleSwitchChange}
+      />
       <button onClick={handleAddClick} type="button" className="header__button">
         + Add Clothes
       </button>
