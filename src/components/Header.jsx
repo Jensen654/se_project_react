@@ -1,4 +1,5 @@
 import { React, useContext, useState } from "react";
+import { Link } from "react-router-dom";
 
 import "../blocks/Header.css";
 
@@ -17,7 +18,9 @@ function Header({ handleAddClick, weatherData }) {
 
   return (
     <header className="header">
-      <img className="header__logo" src={headerLogo} alt="Page Logo" />
+      <Link to={"/"}>
+        <img className="header__logo" src={headerLogo} alt="Page Logo" />
+      </Link>
       <p className="header__date-and-location">
         {currentDate}, {weatherData.city}
       </p>
@@ -28,10 +31,16 @@ function Header({ handleAddClick, weatherData }) {
       <button onClick={handleAddClick} type="button" className="header__button">
         + Add Clothes
       </button>
-      <div className="header__user_container">
-        <p className="header__user_name">Jensen Bean</p>
-        <img src={avatar} alt="User Avatar Image" className="header__avatar" />
-      </div>
+      <Link to={"/profile"}>
+        <div className="header__user_container">
+          <p className="header__user_name">Jensen Bean</p>
+          <img
+            src={avatar}
+            alt="User Avatar Image"
+            className="header__avatar"
+          />
+        </div>
+      </Link>
     </header>
   );
 }
