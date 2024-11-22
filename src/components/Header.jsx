@@ -13,11 +13,6 @@ function Header({ handleAddClick, weatherData }) {
     day: "numeric",
   });
 
-  // const handleToggleSwitchChange = () => {
-  //   setChecked(!checked);
-  //   console.log(checked);
-  // };
-
   const TempCon = useContext(CurrentTemperatureUnitContext);
 
   return (

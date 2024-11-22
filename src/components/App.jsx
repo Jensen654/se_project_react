@@ -4,7 +4,7 @@ import { Route, Routes } from "react-router-dom";
 import { location, apiKey } from "../utils/constants.js";
 import "../blocks/App.css";
 import Header from "./Header";
-import Main from "./Main";
+import Main from "./Main.jsx";
 import Footer from "./Footer";
 import ModalWithForm from "./ModalWithForm";
 import ItemModal from "./ItemModal";
