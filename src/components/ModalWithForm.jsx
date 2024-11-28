@@ -6,11 +6,12 @@ function ModalWithForm({
   title,
   handleCloseClick,
   isOpen,
+  handleSubmit,
 }) {
   return (
     <div className={`modal ${isOpen && "modal_opened"}`}>
       <div className="modal__content">
-        <form className="modal__form">
+        <form className="modal__form" onSubmit={handleSubmit}>
           <p className="modal__title">{title}</p>
           <button
             onClick={handleCloseClick}
