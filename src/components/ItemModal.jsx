@@ -6,6 +6,10 @@ function ItemModal({
   handleCloseClick,
   deleteItem,
 }) {
+  function handleDeleteItem() {
+    deleteItem(selectedCard);
+  }
+
   return (
     <div className={`modal ${activeModal === "preview" && "modal_opened"}`}>
       <div className="modal__content_type_image modal__content">
@@ -24,10 +28,7 @@ function ItemModal({
           <p className="modal__weather-description">
             Weather: {selectedCard.weather}
           </p>
-          <button
-            onClick={deleteItem(selectedCard)}
-            className="modal__delete-button"
-          >
+          <button onClick={handleDeleteItem} className="modal__delete-button">
             Delete Item
           </button>
         </div>

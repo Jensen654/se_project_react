@@ -29,18 +29,9 @@ function App() {
   const [checked, setChecked] = useState(false);
   const [clothingItems, setClothingItems] = useState([]);
 
-  // const getItemList = () => {
-  //   getItems().then((items) => {
-  //     items.forEach((item) => {
-  //       setClothingItems([item, ...clothingItems]);
-  //     });
-  //   });
-  // };
-
   const getItemList = async () => {
     try {
       const items = await getItems();
-      console.log(items);
       setClothingItems((prevItems) => [...items, ...prevItems]);
       // items.forEach((item) => {
       //   setClothingItems([item, ...clothingItems]);
@@ -85,7 +76,6 @@ function App() {
     } else if (checked) {
       setCurrentTemperatureUnit("F");
     }
-    console.log(currentTemperatureUnit);
   };
 
   const handleAddItemSubmit = (newGarment) => {
