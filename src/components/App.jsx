@@ -32,14 +32,10 @@ function App() {
   const getItemList = async () => {
     try {
       const items = await getItems();
-      setClothingItems((prevItems) => [...items, ...prevItems]);
-      // items.forEach((item) => {
-      //   setClothingItems([item, ...clothingItems]);
-      // });
+      setClothingItems(items);
     } catch (error) {
       console.error("Error fetching items:", error);
     }
-    console.log(clothingItems);
   };
 
   const handleCardClick = (card) => {
@@ -79,7 +75,17 @@ function App() {
   };
 
   const handleAddItemSubmit = (newGarment) => {
-    postItem(newGarment);
+    postItem(newGarment).then(() => {
+      setClothingItems([
+        {
+          name: newGarment.garmentName,
+          weather: newGarment.garmentImage,
+          imageUrl: newGarment.weatherType,
+        },
+        ...clothingItems,
+      ]);
+      setActiveModal("");
+    });
   };
 
   const handleDeleteItem = (selectedCard) => {

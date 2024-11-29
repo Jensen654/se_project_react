@@ -1,7 +1,6 @@
 import "../blocks/ToggleSwitch.css";
 
 function ToggleSwitch({ value, onTempClick }) {
-  console.log(value);
   return (
     <>
       <label className="toggle-temperature__label">

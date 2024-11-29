@@ -13,16 +13,16 @@ function AddItemModal({ isOpen, onAddItem, onCloseModal }) {
     setWeatherType("");
   }, [isOpen]);
 
-  function handleGarmentNameChange(input) {
-    setGarmentName(input);
+  function handleGarmentNameChange(event) {
+    setGarmentName(event.target.value);
   }
 
-  function handleGarmentImageChange(input) {
-    setGarmentImage(input);
+  function handleGarmentImageChange(event) {
+    setGarmentImage(event.target.value);
   }
 
-  function handleWeatherTypeChange(input) {
-    setWeatherType(input);
+  function handleWeatherTypeChange(event) {
+    setWeatherType(event.target.value);
   }
 
   function handleSubmit(e) {
