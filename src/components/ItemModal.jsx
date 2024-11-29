@@ -16,7 +16,7 @@ function ItemModal({
         ></button>
         <img
           className="modal__image"
-          src={selectedCard.link}
+          src={selectedCard.imageUrl}
           alt={selectedCard.name}
         />
         <div className="modal__info">
@@ -25,7 +25,7 @@ function ItemModal({
             Weather: {selectedCard.weather}
           </p>
           <button
-            onClick={deleteItem(selectedCard._id)}
+            onClick={deleteItem(selectedCard)}
             className="modal__delete-button"
           >
             Delete Item

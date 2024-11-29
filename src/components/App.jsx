@@ -27,6 +27,29 @@ function App() {
   const [selectedCard, setSelectedCard] = useState({});
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
   const [checked, setChecked] = useState(false);
+  const [clothingItems, setClothingItems] = useState([]);
+
+  // const getItemList = () => {
+  //   getItems().then((items) => {
+  //     items.forEach((item) => {
+  //       setClothingItems([item, ...clothingItems]);
+  //     });
+  //   });
+  // };
+
+  const getItemList = async () => {
+    try {
+      const items = await getItems();
+      console.log(items);
+      setClothingItems((prevItems) => [...items, ...prevItems]);
+      // items.forEach((item) => {
+      //   setClothingItems([item, ...clothingItems]);
+      // });
+    } catch (error) {
+      console.error("Error fetching items:", error);
+    }
+    console.log(clothingItems);
+  };
 
   const handleCardClick = (card) => {
     setActiveModal("preview");
@@ -51,6 +74,10 @@ function App() {
       .catch(console.error);
   }, []);
 
+  useEffect(() => {
+    getItemList().catch(console.error);
+  }, []);
+
   const handleToggleSwitchChange = () => {
     setChecked(!checked);
     if (!checked) {
@@ -61,27 +88,19 @@ function App() {
     console.log(currentTemperatureUnit);
   };
 
-  const handleResponse = (res) => {
-    if (res.ok) {
-      console.log(res);
-      return res.json();
-    }
-    return Promise.reject(`Error: ${res.status}`);
-  };
-
   const handleAddItemSubmit = (newGarment) => {
-    postItem(newGarment).then((res) => handleResponse(res));
+    postItem(newGarment);
   };
 
-  const handleDeleteItem = (id) => {
-    deleteItem(id).then((res) => handleResponse(res));
+  const handleDeleteItem = (selectedCard) => {
+    deleteItem(selectedCard._id).then(() => {
+      const newList = clothingItems.filter(
+        (item) => item._id !== selectedCard._id
+      );
+      setClothingItems(newList);
+      setActiveModal("");
+    });
   };
-
-  const getItemList = () => {
-    getItems().then((res) => handleResponse(res));
-  };
-
-  getItemList();
 
   return (
     <div className="page">
@@ -97,7 +116,7 @@ function App() {
                 <Main
                   weatherData={weatherData}
                   handleCardClick={handleCardClick}
-                  garmentList={getItemList}
+                  garmentList={clothingItems}
                 />
               }
             />
@@ -107,6 +126,7 @@ function App() {
                 <Profile
                   handleAddItemClick={handleAddClick}
                   handleCardClick={handleCardClick}
+                  itemList={clothingItems}
                 />
               }
             />
