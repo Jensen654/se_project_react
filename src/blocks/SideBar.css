@@ -1,0 +1,14 @@
+.side-bar {
+  display: flex;
+  max-width: 229px;
+  max-height: 56px;
+  width: 100%;
+}
+
+.side-bar__avatar {
+  margin-right: 16px;
+}
+
+.side-bar__name {
+  align-self: center;
+}

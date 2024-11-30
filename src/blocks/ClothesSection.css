@@ -1,0 +1,36 @@
+.clothes__section {
+  display: flex;
+  flex-direction: column;
+}
+
+.clothes__section_title {
+  display: flex;
+  margin-bottom: 16px;
+  margin-top: 16px;
+}
+
+.clothes__section_title-text {
+  margin: 0;
+  margin-right: 20px;
+}
+
+.clothes__section_add-item-button {
+  border: none;
+  background-color: transparent;
+  font-family: "Cabinet Grotesk";
+  font-weight: 700;
+  opacity: 0.6;
+  font-size: 20px;
+  align-self: center;
+  padding: 0;
+  cursor: pointer;
+}
+
+.clothes__section_card-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  gap: 20px;
+}
