@@ -62,17 +62,17 @@
     },
     {
       "garmentId": 0,
-      "name": "yeuio",
-      "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Scarf.png?etag=74efbee93810c926b5507e862c6cb76c",
-      "weatherType": "on",
-      "_id": 21
+      "name": ";asjklfe",
+      "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/T-Shirt.png?etag=44ed1963c44ab19cd2f5011522c5fc09",
+      "weather": "cold",
+      "_id": 19
     },
     {
       "garmentId": 0,
-      "name": "asdf",
+      "name": "as;dlfkja;lkjef",
       "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/T-Shirt.png?etag=44ed1963c44ab19cd2f5011522c5fc09",
-      "weatherType": "on",
-      "_id": 22
+      "weather": "warm",
+      "_id": 20
     }
   ]
 }

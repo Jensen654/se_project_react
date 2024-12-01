@@ -24,7 +24,7 @@ function AddItemModal({ clothingItems, isOpen, onAddItem, onCloseModal }) {
   }
 
   function handleWeatherTypeChange(event) {
-    setWeatherType(event.target.value);
+    setWeatherType(event.target.id);
   }
 
   function handleGarmentId() {
@@ -47,7 +47,7 @@ function AddItemModal({ clothingItems, isOpen, onAddItem, onCloseModal }) {
       garmentId,
       name: garmentName,
       imageUrl: garmentImage,
-      weatherType: weatherType,
+      weather: weatherType,
     });
   }
 
@@ -93,6 +93,7 @@ function AddItemModal({ clothingItems, isOpen, onAddItem, onCloseModal }) {
         </label>
         <label htmlFor="warm" className="modal__label_type_radio">
           <input
+            onChange={handleWeatherTypeChange}
             name="weathertype"
             type="radio"
             className="modal__radio-input"
@@ -102,6 +103,7 @@ function AddItemModal({ clothingItems, isOpen, onAddItem, onCloseModal }) {
         </label>
         <label htmlFor="cold" className="modal__label_type_radio">
           <input
+            onChange={handleWeatherTypeChange}
             name="weathertype"
             type="radio"
             className="modal__radio-input"
