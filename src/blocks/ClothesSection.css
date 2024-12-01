@@ -1,6 +1,7 @@
 .clothes__section {
   display: flex;
   flex-direction: column;
+  margin-left: 40px;
 }
 
 .clothes__section_title {

@@ -13,11 +13,9 @@
 }
 
 .card__image {
-  max-width: 325px;
-  max-height: 328px;
-  height: 328px;
+  width: 322px;
+  height: 325px;
   overflow: hidden;
-  width: 325px;
 }
 
 .card__title {

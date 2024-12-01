@@ -33,7 +33,7 @@ function AddItemModal({ clothingItems, isOpen, onAddItem, onCloseModal }) {
       itemListIds.push(item._id);
     });
 
-    for (let i = 0; i < clothingItems.length; i++) {
+    for (let i = 0; i < clothingItems.length + 1; i++) {
       if (!itemListIds.includes(i)) {
         setGarmentId(i);
         return;
@@ -62,6 +62,7 @@ function AddItemModal({ clothingItems, isOpen, onAddItem, onCloseModal }) {
       <label htmlFor="name" className="modal__label">
         Name{" "}
         <input
+          value={garmentName}
           onChange={handleGarmentNameChange}
           type="text"
           className="modal__input"
@@ -73,6 +74,7 @@ function AddItemModal({ clothingItems, isOpen, onAddItem, onCloseModal }) {
       <label htmlFor="imageUrl" className="modal__label">
         Image{" "}
         <input
+          value={garmentImage}
           onChange={handleGarmentImageChange}
           type="url"
           className="modal__input"
@@ -85,6 +87,7 @@ function AddItemModal({ clothingItems, isOpen, onAddItem, onCloseModal }) {
         <legend className="modal__legend">Select the weather type:</legend>
         <label htmlFor="hot" className="modal__label_type_radio">
           <input
+            checked={weatherType === "hot"}
             onChange={handleWeatherTypeChange}
             name="weathertype"
             type="radio"
@@ -96,6 +99,7 @@ function AddItemModal({ clothingItems, isOpen, onAddItem, onCloseModal }) {
         </label>
         <label htmlFor="warm" className="modal__label_type_radio">
           <input
+            checked={weatherType === "warm"}
             onChange={handleWeatherTypeChange}
             name="weathertype"
             type="radio"
@@ -107,6 +111,7 @@ function AddItemModal({ clothingItems, isOpen, onAddItem, onCloseModal }) {
         </label>
         <label htmlFor="cold" className="modal__label_type_radio">
           <input
+            checked={weatherType === "cold"}
             onChange={handleWeatherTypeChange}
             name="weathertype"
             type="radio"
