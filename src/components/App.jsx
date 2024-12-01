@@ -78,6 +78,7 @@ function App() {
     postItem(newGarment).then(() => {
       setClothingItems([
         {
+          _id: newGarment.garmentId,
           name: newGarment.garmentName,
           weather: newGarment.garmentImage,
           imageUrl: newGarment.weatherType,
@@ -130,6 +131,7 @@ function App() {
           <Footer />
         </div>
         <AddItemModal
+          clothingItems={clothingItems}
           isOpen={activeModal === "add-garment"}
           onAddItem={handleAddItemSubmit}
           onCloseModal={handleCloseClick}
