@@ -73,6 +73,25 @@
       "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/T-Shirt.png?etag=44ed1963c44ab19cd2f5011522c5fc09",
       "weather": "warm",
       "_id": 20
+    },
+    {
+      "garmentId": 0,
+      "name": ";lasejf",
+      "imageUrl": "https://poopy.com",
+      "weather": "hot",
+      "_id": 21
+    },
+    {
+      "_id": 22,
+      "name": "yuio",
+      "imageUrl": "https://as1.ftcdn.net/v2/jpg/00/56/38/12/1000_F_56381206_WRdSYF0TQ8AebaaUaFESsAHQ71LzTp5q.jpg",
+      "weather": "warm"
+    },
+    {
+      "_id": 1,
+      "name": "yuiodsfd",
+      "imageUrl": "https://as1.ftcdn.net/v2/jpg/00/56/38/12/1000_F_56381206_WRdSYF0TQ8AebaaUaFESsAHQ71LzTp5q.jpg",
+      "weather": "cold"
     }
   ]
 }

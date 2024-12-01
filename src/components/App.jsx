@@ -78,10 +78,10 @@ function App() {
     postItem(newGarment).then(() => {
       setClothingItems([
         {
-          _id: newGarment.garmentId,
-          name: newGarment.garmentName,
-          weather: newGarment.garmentImage,
-          imageUrl: newGarment.weatherType,
+          _id: newGarment._id,
+          name: newGarment.name,
+          weather: newGarment.weather,
+          imageUrl: newGarment.imageUrl,
         },
         ...clothingItems,
       ]);

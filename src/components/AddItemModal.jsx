@@ -44,7 +44,7 @@ function AddItemModal({ clothingItems, isOpen, onAddItem, onCloseModal }) {
   function handleSubmit(e) {
     e.preventDefault();
     onAddItem({
-      garmentId,
+      _id: garmentId,
       name: garmentName,
       imageUrl: garmentImage,
       weather: weatherType,
@@ -67,6 +67,7 @@ function AddItemModal({ clothingItems, isOpen, onAddItem, onCloseModal }) {
           className="modal__input"
           id="name"
           placeholder="Name"
+          required
         />
       </label>
       <label htmlFor="imageUrl" className="modal__label">
@@ -77,6 +78,7 @@ function AddItemModal({ clothingItems, isOpen, onAddItem, onCloseModal }) {
           className="modal__input"
           id="imageUrl"
           placeholder="Image URL"
+          required
         />
       </label>
       <fieldset className="modal__radio-buttons">
@@ -88,6 +90,7 @@ function AddItemModal({ clothingItems, isOpen, onAddItem, onCloseModal }) {
             type="radio"
             className="modal__radio-input"
             id="hot"
+            required
           />{" "}
           Hot
         </label>
@@ -98,6 +101,7 @@ function AddItemModal({ clothingItems, isOpen, onAddItem, onCloseModal }) {
             type="radio"
             className="modal__radio-input"
             id="warm"
+            required
           />{" "}
           Warm
         </label>
@@ -108,6 +112,7 @@ function AddItemModal({ clothingItems, isOpen, onAddItem, onCloseModal }) {
             type="radio"
             className="modal__radio-input"
             id="cold"
+            required
           />{" "}
           Cold
         </label>
