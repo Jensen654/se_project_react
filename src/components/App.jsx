@@ -62,7 +62,7 @@ function App() {
   }, []);
 
   useEffect(() => {
-    getItemList().catch(console.error);
+    getItemList();
   }, []);
 
   const handleToggleSwitchChange = () => {
@@ -75,17 +75,9 @@ function App() {
   };
 
   const handleAddItemSubmit = (newGarment) => {
-    postItem(newGarment).then(() => {
-      setClothingItems([
-        {
-          _id: newGarment._id,
-          name: newGarment.name,
-          weather: newGarment.weather,
-          imageUrl: newGarment.imageUrl,
-        },
-        ...clothingItems,
-      ]);
-      setActiveModal("");
+    postItem(newGarment).then((res) => {
+      setClothingItems([res, ...clothingItems]);
+      handleCloseClick();
     });
   };
 
