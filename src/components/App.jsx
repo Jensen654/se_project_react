@@ -75,20 +75,24 @@ function App() {
   };
 
   const handleAddItemSubmit = (newGarment) => {
-    postItem(newGarment).then((res) => {
-      setClothingItems([res, ...clothingItems]);
-      handleCloseClick();
-    });
+    postItem(newGarment)
+      .then((res) => {
+        setClothingItems([res, ...clothingItems]);
+        handleCloseClick();
+      })
+      .catch(console.error);
   };
 
   const handleDeleteItem = (selectedCard) => {
-    deleteItem(selectedCard._id).then(() => {
-      const newList = clothingItems.filter(
-        (item) => item._id !== selectedCard._id
-      );
-      setClothingItems(newList);
-      setActiveModal("");
-    });
+    deleteItem(selectedCard._id)
+      .then(() => {
+        const newList = clothingItems.filter(
+          (item) => item._id !== selectedCard._id
+        );
+        setClothingItems(newList);
+        setActiveModal("");
+      })
+      .catch(console.error);
   };
 
   return (

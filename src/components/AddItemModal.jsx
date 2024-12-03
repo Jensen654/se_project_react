@@ -48,7 +48,7 @@ function AddItemModal({ clothingItems, isOpen, onAddItem, onCloseModal }) {
       name: garmentName,
       imageUrl: garmentImage,
       weather: weatherType,
-    }).catch(console.error);
+    });
   }
 
   return (

@@ -73,34 +73,10 @@
       "weather": "warm"
     },
     {
-      "_id": 2,
-      "name": "ygiehufwoiajvpf",
-      "imageUrl": "https://as1.ftcdn.net/v2/jpg/00/56/38/12/1000_F_56381206_WRdSYF0TQ8AebaaUaFESsAHQ71LzTp5q.jpg",
-      "weather": "hot"
-    },
-    {
-      "_id": 3,
-      "name": "ygiehufwoiajvpfasdf",
-      "imageUrl": "https://as1.ftcdn.net/v2/jpg/00/56/38/12/1000_F_56381206_WRdSYF0TQ8AebaaUaFESsAHQ71LzTp5q.jpg",
-      "weather": "warm"
-    },
-    {
-      "_id": 4,
-      "name": "ygiehufwoiajvpfasdfasdf",
-      "imageUrl": "https://as1.ftcdn.net/v2/jpg/00/56/38/12/1000_F_56381206_WRdSYF0TQ8AebaaUaFESsAHQ71LzTp5q.jpg",
-      "weather": "cold"
-    },
-    {
       "_id": 6,
       "name": "awefasefaesf",
       "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/T-Shirt.png?etag=44ed1963c44ab19cd2f5011522c5fc09",
       "weather": "warm"
-    },
-    {
-      "_id": 18,
-      "name": "another",
-      "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/T-Shirt.png?etag=44ed1963c44ab19cd2f5011522c5fc09",
-      "weather": "hot"
     },
     {
       "_id": 19,
@@ -111,6 +87,18 @@
     {
       "_id": 5,
       "name": "cold",
+      "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Scarf.png?etag=74efbee93810c926b5507e862c6cb76c",
+      "weather": "cold"
+    },
+    {
+      "_id": 0.42973717917457677,
+      "name": "jensen ",
+      "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Scarf.png?etag=74efbee93810c926b5507e862c6cb76c",
+      "weather": "hot"
+    },
+    {
+      "_id": 0.4287920056983112,
+      "name": "Jensen",
       "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Scarf.png?etag=74efbee93810c926b5507e862c6cb76c",
       "weather": "cold"
     }

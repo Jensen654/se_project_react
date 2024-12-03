@@ -7,7 +7,7 @@ function ItemModal({
   deleteItem,
 }) {
   function handleDeleteItem() {
-    deleteItem(selectedCard).catch(console.error);
+    deleteItem(selectedCard);
   }
 
   return (
