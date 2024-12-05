@@ -26,4 +26,4 @@ const deleteItem = (id) => {
   }).then((res) => handleResponse(res));
 };
 
-export { getItems, postItem, deleteItem };
+export { handleResponse, getItems, postItem, deleteItem };

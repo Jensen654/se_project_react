@@ -6,7 +6,6 @@ import "../blocks/App.css";
 import Header from "./Header";
 import Main from "./Main.jsx";
 import Footer from "./Footer";
-import ModalWithForm from "./ModalWithForm";
 import ItemModal from "./ItemModal";
 import { getWeather, filterWeatherData } from "../utils/weatherApi";
 import Profile from "./Profile";
@@ -90,7 +89,7 @@ function App() {
           (item) => item._id !== selectedCard._id
         );
         setClothingItems(newList);
-        setActiveModal("");
+        handleCloseClick();
       })
       .catch(console.error);
   };
