@@ -2,17 +2,15 @@ import "../blocks/AddItemModal.css";
 import ModalWithForm from "./ModalWithForm";
 import { useState, useEffect } from "react";
 
-function AddItemModal({ clothingItems, isOpen, onAddItem, onCloseModal }) {
+function AddItemModal({ isOpen, onAddItem, onCloseModal }) {
   const [garmentName, setGarmentName] = useState("");
   const [garmentImage, setGarmentImage] = useState("");
   const [weatherType, setWeatherType] = useState("");
-  // const [garmentId, setGarmentId] = useState();
 
   useEffect(() => {
     setGarmentName("");
     setGarmentImage("");
     setWeatherType("");
-    // handleGarmentId();
   }, [isOpen]);
 
   function handleGarmentNameChange(event) {
@@ -26,20 +24,6 @@ function AddItemModal({ clothingItems, isOpen, onAddItem, onCloseModal }) {
   function handleWeatherTypeChange(event) {
     setWeatherType(event.target.id);
   }
-
-  // function handleGarmentId() {
-  //   const itemListIds = [];
-  //   clothingItems.map((item) => {
-  //     itemListIds.push(item._id);
-  //   });
-
-  //   for (let i = 0; i < clothingItems.length + 1; i++) {
-  //     if (!itemListIds.includes(i)) {
-  //       setGarmentId(i);
-  //       return;
-  //     }
-  //   }
-  // }
 
   function handleSubmit(e) {
     e.preventDefault();

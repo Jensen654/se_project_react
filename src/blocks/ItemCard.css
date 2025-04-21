@@ -19,10 +19,43 @@
 }
 
 .card__title {
-  padding: 2px 12px;
   position: absolute;
   top: 15px;
-  margin: 0;
+  border-radius: 5px;
+  display: flex;
+}
+
+.card__not-liked {
+  background-image: url("../images/heart.png");
+  width: 18px;
+  height: 15px;
+  overflow: hidden;
+  margin-left: 10px;
+  align-self: center;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.card__liked {
+  background-image: url("../images/heart_active.png");
+  width: 18px;
+  height: 15px;
+  overflow: hidden;
+  margin-left: 10px;
+  align-self: center;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.card__like:visited {
+  background-image: url("../images/heart_active.png");
+}
+
+.card__title_text {
   background-color: white;
   border-radius: 5px;
+  padding: 2px 12px;
+  cursor: default;
 }

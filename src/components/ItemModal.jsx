@@ -1,4 +1,7 @@
+import { useContext } from "react";
 import "../blocks/ItemModal.css";
+import { CurrentUserContext } from "../contexts/CurrentUserContext";
+import { jwt } from "../utils/constants";
 
 function ItemModal({
   activeModal,
@@ -7,8 +10,11 @@ function ItemModal({
   deleteItem,
 }) {
   function handleDeleteItem() {
-    deleteItem(selectedCard);
+    deleteItem(selectedCard, jwt);
   }
+
+  const { currentUser } = useContext(CurrentUserContext);
+  const isOwn = selectedCard.owner === currentUser._id;
 
   return (
     <div className={`modal ${activeModal === "preview" && "modal_opened"}`}>
@@ -28,9 +34,11 @@ function ItemModal({
           <p className="modal__weather-description">
             Weather: {selectedCard.weather}
           </p>
-          <button onClick={handleDeleteItem} className="modal__delete-button">
-            Delete Item
-          </button>
+          {isOwn && (
+            <button onClick={handleDeleteItem} className="modal__delete-button">
+              Delete Item
+            </button>
+          )}
         </div>
       </div>
     </div>

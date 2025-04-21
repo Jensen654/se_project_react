@@ -37,8 +37,8 @@ const getWeatherType = (temperature) => {
 
 export const getSkyData = (data) => {
   if (data === "Clouds") {
-    return cloudy;
+    return "cloudy";
   } else if (data === "Rain") {
-    return rain;
+    return "rain";
   }
 };

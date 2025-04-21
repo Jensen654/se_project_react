@@ -7,6 +7,8 @@ function ModalWithForm({
   handleCloseClick,
   isOpen,
   handleSubmit,
+  optionalButtonText,
+  optionalButtonTextFunction,
 }) {
   return (
     <div className={`modal ${isOpen && "modal_opened"}`}>
@@ -22,6 +24,15 @@ function ModalWithForm({
           <button className="modal__form_submit" type="submit">
             {buttonText}
           </button>
+          {optionalButtonText && (
+            <button
+              className="modal__form_alternate-button"
+              type="button"
+              onClick={optionalButtonTextFunction}
+            >
+              {optionalButtonText}
+            </button>
+          )}
         </form>
       </div>
     </div>

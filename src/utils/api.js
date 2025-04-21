@@ -12,18 +12,52 @@ const getItems = () => {
   return fetch(`${baseUrl}/items`).then((res) => handleResponse(res));
 };
 
-const postItem = (postBody) => {
+const postItem = (postBody, token) => {
   return fetch(`${baseUrl}/items`, {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
+    headers: {
+      "Content-Type": "application/json",
+      authorization: `Bearer ${token}`,
+    },
     body: JSON.stringify(postBody),
   }).then((res) => handleResponse(res));
 };
 
-const deleteItem = (id) => {
+const deleteItem = (id, token) => {
   return fetch(`${baseUrl}/items/${id}`, {
     method: "DELETE",
+    headers: {
+      authorization: `Bearer ${token}`,
+    },
   }).then((res) => handleResponse(res));
 };
 
-export { handleResponse, getItems, postItem, deleteItem };
+const addCardLike = (id, token) => {
+  return fetch(`${baseUrl}/items/${id}/likes`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+      authorization: `Bearer ${token}`,
+    },
+  }).then((res) => handleResponse(res));
+};
+
+const removeCardLike = (id, token) => {
+  return fetch(`${baseUrl}/items/${id}/likes`, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+      authorization: `Bearer ${token}`,
+    },
+  }).then((res) => handleResponse(res));
+};
+
+export {
+  handleResponse,
+  getItems,
+  postItem,
+  deleteItem,
+  baseUrl,
+  addCardLike,
+  removeCardLike,
+};
