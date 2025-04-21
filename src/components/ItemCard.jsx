@@ -5,8 +5,6 @@ import { useContext } from "react";
 function ItemCard({ item, handleCardClick, onCardLike }) {
   const { currentUser } = useContext(CurrentUserContext);
 
-  console.log("Item weather:", item.weather);
-
   const onCardClick = () => {
     handleCardClick(item);
   };

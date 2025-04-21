@@ -18,8 +18,6 @@ function Main({ weatherData, handleCardClick, garmentList, onCardLike }) {
           &deg; {TempCon.currentTemperatureUnit} / You may want to wear:
         </p>
         <ul className="cards__list">
-          {console.log("Weather type:", weatherData.type)}
-          {console.log("Garment list:", garmentList)}
           {garmentList
             .filter((item) => {
               return item.weather === weatherData.type;

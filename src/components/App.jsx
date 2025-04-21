@@ -177,7 +177,11 @@ function App() {
   const handleEditProfile = (newName, newAvatarUrl) => {
     editUser(jwt, newName, newAvatarUrl).then(() => {
       handleCloseClick();
-      setCurrentUser({ name: newName, avatarUrl: newAvatarUrl });
+      setCurrentUser({
+        name: newName,
+        avatarUrl: newAvatarUrl,
+        _id: currentUser._id,
+      });
     });
   };
 
@@ -284,10 +288,6 @@ function App() {
               isOpen={activeModal === "sign-in"}
               handleCloseClick={handleCloseClick}
             />
-            {/* <EditProfileModal
-              isOpen={activeModal === "edit-profile"}
-              handleCloseClick={handleCloseClick}
-            /> */}
           </AuthorizationContext.Provider>
         </CurrentTemperatureUnitContext.Provider>
       </CurrentUserContext.Provider>
