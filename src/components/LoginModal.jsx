@@ -1,4 +1,3 @@
-import "../blocks/LoginModal.css";
 import ModalWithForm from "./ModalWithForm";
 import { useState, useEffect, useContext } from "react";
 import { AuthorizationContext } from "../contexts/AuthorizationContext";
