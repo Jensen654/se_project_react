@@ -1,3 +1,8 @@
+a {
+  text-decoration: none;
+  color: black;
+}
+
 .header {
   max-width: 1360px;
   max-height: 40px;

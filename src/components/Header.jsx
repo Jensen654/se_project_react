@@ -55,7 +55,6 @@ function Header({
                 />
               ) : (
                 <div className="header__avatar header__avatar_fallback">
-                  {/* {console.log(currentUser)} */}
                   {currentUser.name || "??"}
                 </div>
               )}
