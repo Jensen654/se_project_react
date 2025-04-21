@@ -1,8 +1,0 @@
-@import url(./src/vendor/normalize.css);
-@import url(./src/vendor/fonts.css);
-@import url(./src/blocks/Footer.css);
-/* @import url(./blocks/ItemCard.css); */
-@import url(./src/blocks/ItemModal.css);
-/* @import url(./blocks/Main.css); */
-@import url(./src/blocks/ModalWithForm.css);
-@import url(./src/blocks/WeatherCard.css);
