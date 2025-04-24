@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 
-import { location, apiKey, jwt } from "../utils/constants.js";
+import { location, apiKey } from "../utils/constants.js";
 import "../blocks/App.css";
 import Header from "./Header";
 import Main from "./Main.jsx";
@@ -52,6 +52,7 @@ function App() {
   });
 
   useEffect(() => {
+    const jwt = localStorage.getItem("jwt");
     if (jwt) {
       checkToken(jwt)
         .then((user) => {
@@ -127,6 +128,7 @@ function App() {
   };
 
   const handleAddItemSubmit = (newGarment) => {
+    const jwt = localStorage.getItem("jwt");
     postItem(newGarment, jwt)
       .then((res) => {
         setClothingItems([res, ...clothingItems]);
@@ -144,18 +146,19 @@ function App() {
         avatarUrl: data.user.avatar,
         _id: data.user._id,
       });
+
       localStorage.setItem("jwt", data.token);
     });
   };
 
-  const handleRegistration = (name, avatar, email, password) => {
+  const handleRegistration = ({ name, avatar, email, password }) => {
     registerUser(name, avatar, email, password).then(() => {
-      handleCloseClick();
       handleSignIn({ email, password });
     });
   };
 
   const handleDeleteItem = (selectedCard) => {
+    const jwt = localStorage.getItem("jwt");
     deleteItem(selectedCard._id, jwt)
       .then(() => {
         const newList = clothingItems.filter(
@@ -175,6 +178,7 @@ function App() {
   };
 
   const handleEditProfile = (newName, newAvatarUrl) => {
+    const jwt = localStorage.getItem("jwt");
     editUser(jwt, newName, newAvatarUrl).then(() => {
       handleCloseClick();
       setCurrentUser({
@@ -186,6 +190,7 @@ function App() {
   };
 
   const handleCardLike = ({ id, isLiked }) => {
+    const jwt = localStorage.getItem("jwt");
     const cardLikeRequest = !isLiked
       ? addCardLike(id, jwt)
       : removeCardLike(id, jwt);

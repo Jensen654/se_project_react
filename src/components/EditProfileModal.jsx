@@ -4,8 +4,8 @@ import { useContext, useState } from "react";
 
 function EditProfileModal({ isOpen, handleCloseClick }) {
   const { currentUser, handleEditProfile } = useContext(CurrentUserContext);
-  const [name, setName] = useState("");
-  const [avatarUrl, setAvatarUrl] = useState("");
+  const [name, setName] = useState(currentUser.name);
+  const [avatarUrl, setAvatarUrl] = useState(currentUser.avatarUrl);
 
   function handleNameChange(event) {
     setName(event.target.value);
@@ -28,25 +28,27 @@ function EditProfileModal({ isOpen, handleCloseClick }) {
       isOpen={isOpen}
       handleSubmit={editProfile}
     >
-      <label htmlFor="name" className="modal__label">
+      <label htmlFor="edit-name" className="modal__label">
         Name*{" "}
         <input
           onChange={handleNameChange}
           type="text"
           className="modal__input"
-          id="name"
-          placeholder={currentUser.name}
+          id="edit-name"
+          placeholder="Name"
+          value={name}
           required
         />
       </label>
-      <label htmlFor="avatarUrl" className="modal__label">
+      <label htmlFor="edit-avatarUrl" className="modal__label">
         Avatar*{" "}
         <input
+          value={avatarUrl}
           onChange={handleAvatarUrlChange}
           type="text"
           className="modal__input"
-          id="avatarUrl"
-          placeholder={currentUser.avatarUrl}
+          id="edit-avatarUrl"
+          placeholder="Image URL"
           required
         />
       </label>

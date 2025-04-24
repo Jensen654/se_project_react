@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import "../blocks/ItemModal.css";
 import { CurrentUserContext } from "../contexts/CurrentUserContext";
-import { jwt } from "../utils/constants";
 
 function ItemModal({
   activeModal,
@@ -10,6 +9,7 @@ function ItemModal({
   deleteItem,
 }) {
   function handleDeleteItem() {
+    const jwt = localStorage.getItem("jwt");
     deleteItem(selectedCard, jwt);
   }
 

@@ -147,5 +147,3 @@ export const location = {
 };
 
 export const apiKey = "c207abd2a8d8de670dc53a15b531d2df";
-
-export const jwt = localStorage.getItem("jwt");

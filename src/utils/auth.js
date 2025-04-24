@@ -1,6 +1,6 @@
 import { handleResponse, baseUrl } from "./api";
 
-const registerUser = ({ name, avatar, email, password }) => {
+const registerUser = (name, avatar, email, password) => {
   return fetch(`${baseUrl}/signup`, {
     method: "POST",
     headers: {

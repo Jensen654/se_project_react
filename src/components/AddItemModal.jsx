@@ -43,26 +43,26 @@ function AddItemModal({ isOpen, onAddItem, onCloseModal }) {
       isOpen={isOpen}
       handleSubmit={handleSubmit}
     >
-      <label htmlFor="name" className="modal__label">
+      <label htmlFor="item-name" className="modal__label">
         Name{" "}
         <input
           value={garmentName}
           onChange={handleGarmentNameChange}
           type="text"
           className="modal__input"
-          id="name"
+          id="item-name"
           placeholder="Name"
           required
         />
       </label>
-      <label htmlFor="imageUrl" className="modal__label">
+      <label htmlFor="item-imageUrl" className="modal__label">
         Image{" "}
         <input
           value={garmentImage}
           onChange={handleGarmentImageChange}
           type="url"
           className="modal__input"
-          id="imageUrl"
+          id="item-imageUrl"
           placeholder="Image URL"
           required
         />
