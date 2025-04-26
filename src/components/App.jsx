@@ -138,23 +138,27 @@ function App() {
   };
 
   const handleSignIn = ({ email, password }) => {
-    signInUser(email, password).then((data) => {
-      handleCloseClick();
-      setIsLoggedIn(true);
-      setCurrentUser({
-        name: data.user.name,
-        avatarUrl: data.user.avatar,
-        _id: data.user._id,
-      });
+    signInUser(email, password)
+      .then((data) => {
+        handleCloseClick();
+        setIsLoggedIn(true);
+        setCurrentUser({
+          name: data.user.name,
+          avatarUrl: data.user.avatar,
+          _id: data.user._id,
+        });
 
-      localStorage.setItem("jwt", data.token);
-    });
+        localStorage.setItem("jwt", data.token);
+      })
+      .catch(console.error);
   };
 
   const handleRegistration = ({ name, avatar, email, password }) => {
-    registerUser(name, avatar, email, password).then(() => {
-      handleSignIn({ email, password });
-    });
+    registerUser(name, avatar, email, password)
+      .then(() => {
+        handleSignIn({ email, password });
+      })
+      .catch(console.error);
   };
 
   const handleDeleteItem = (selectedCard) => {
@@ -179,14 +183,16 @@ function App() {
 
   const handleEditProfile = (newName, newAvatarUrl) => {
     const jwt = localStorage.getItem("jwt");
-    editUser(jwt, newName, newAvatarUrl).then(() => {
-      handleCloseClick();
-      setCurrentUser({
-        name: newName,
-        avatarUrl: newAvatarUrl,
-        _id: currentUser._id,
-      });
-    });
+    editUser(jwt, newName, newAvatarUrl)
+      .then(() => {
+        handleCloseClick();
+        setCurrentUser({
+          name: newName,
+          avatarUrl: newAvatarUrl,
+          _id: currentUser._id,
+        });
+      })
+      .catch(console.error);
   };
 
   const handleCardLike = ({ id, isLiked }) => {
@@ -201,7 +207,7 @@ function App() {
           cards.map((item) => (item._id === id ? updatedCard : item))
         );
       })
-      .catch((err) => console.log(err));
+      .catch(console.error);
   };
 
   return (
