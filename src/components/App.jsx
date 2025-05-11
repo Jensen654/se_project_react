@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 
-import { location, apiKey } from "../utils/constants.js";
+import { apiKey } from "../utils/constants.js";
 import "../blocks/App.css";
 import Header from "./Header";
 import Main from "./Main.jsx";
@@ -16,6 +16,7 @@ import {
   deleteItem,
   addCardLike,
   removeCardLike,
+  getUserLocation,
 } from "../utils/api.js";
 import {
   registerUser,
@@ -66,18 +67,28 @@ function App() {
         })
         .catch((err) => {
           console.error("Error checking token:", err);
+          localStorage.removeItem("jwt");
         });
     }
   }, []);
 
   useEffect(() => {
-    getWeather(location, apiKey)
-      .then((res) => {
-        const filteredWeatherData = filterWeatherData(res);
+    getUserLocation()
+      .then((data) => {
+        const location = {
+          latitude: data.latitude,
+          longitude: data.longitude,
+        };
+        console.log(location);
+        getWeather(location, apiKey)
+          .then((res) => {
+            const filteredWeatherData = filterWeatherData(res);
 
-        setWeatherData(filteredWeatherData);
+            setWeatherData(filteredWeatherData);
+          })
+          .catch(console.error);
       })
-      .catch(console.error);
+      .catch((err) => console.error(err));
   }, []);
 
   useEffect(() => {

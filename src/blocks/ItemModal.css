@@ -5,6 +5,8 @@
 
 .modal__info {
   padding: 20px 0 32px 32px;
+  display: flex;
+  flex-direction: column;
 }
 
 .modal__item-name {
@@ -19,11 +21,13 @@
 .modal__delete-button {
   border: none;
   background-color: transparent;
-  position: absolute;
-  right: 32px;
-  bottom: 68px;
+  position: relative;
   color: red;
   font-family: "Cabinet Grotesk";
   font-weight: 700;
   cursor: pointer;
+  align-self: end;
+  margin-top: 20px;
+  right: 32px;
+  bottom: 68px;
 }

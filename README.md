@@ -1,6 +1,8 @@
-# React + Vite
+# Working Domain until 6/7/2025
 
-[github-pages](https://jensen654.github.io/se_project_react/)
+[Personal Domain](https://jensenbeanwtwr.twilightparadox.com/)
+
+# React + Vite
 
 Project Goals:
 Creating a functional website using the React framework, specifically implementing React Routing and State Management.
@@ -19,4 +21,15 @@ json-server --watch db.json --id \_id --port 3001
 
 # Backend
 
-se_project_express (https://github.com/Jensen654/se_project_express)
+[se_project_express] (https://github.com/Jensen654/se_project_express)
+
+# Techniques
+
+React Context
+JWT Authentication
+Protected Routes
+Api Integration
+Custom Error Handling
+React Router
+Dynamic Navigation
+State Management

@@ -1,6 +1,2 @@
 @import url(./vendor/normalize.css);
 @import url(./vendor/fonts.css);
-@import url(./blocks/Footer.css);
-@import url(./blocks/ItemModal.css);
-@import url(./blocks/ModalWithForm.css);
-@import url(./blocks/WeatherCard.css);

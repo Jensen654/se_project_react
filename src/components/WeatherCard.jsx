@@ -1,6 +1,7 @@
 import { weatherTypes } from "../utils/constants";
 import { CurrentTemperatureUnitContext } from "../contexts/CurrentTemperatureUnitContext.js";
 import { useContext } from "react";
+import "../blocks/WeatherCard.css";
 
 function WeatherCard({ weatherData }) {
   const weatherType = weatherTypes.filter((type) => {

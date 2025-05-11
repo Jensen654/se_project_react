@@ -1,4 +1,7 @@
-const baseUrl = "http://localhost:3001";
+const baseUrl =
+  process.env.NODE_ENV === "production"
+    ? "https://api.jensenbeanwtwr.twilightparadox.com"
+    : "http://localhost:3001";
 
 const handleResponse = (res) => {
   if (res.ok) {
@@ -52,6 +55,12 @@ const removeCardLike = (id, token) => {
   }).then((res) => handleResponse(res));
 };
 
+const getUserLocation = () => {
+  return fetch(
+    "https://api.ipgeolocation.io/ipgeo?apiKey=0e151d23369d4fe7995c8a495435e606"
+  ).then((res) => handleResponse(res));
+};
+
 export {
   handleResponse,
   getItems,
@@ -60,4 +69,5 @@ export {
   baseUrl,
   addCardLike,
   removeCardLike,
+  getUserLocation,
 };
