@@ -1,11 +1,13 @@
 import "../blocks/AddItemModal.css";
 import ModalWithForm from "./ModalWithForm";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import { AuthorizationContext } from "../contexts/AuthorizationContext";
 
 function AddItemModal({ isOpen, onAddItem, onCloseModal }) {
   const [garmentName, setGarmentName] = useState("");
   const [garmentImage, setGarmentImage] = useState("");
   const [weatherType, setWeatherType] = useState("");
+  const { buttonText, setButtonText } = useContext(AuthorizationContext);
 
   useEffect(() => {
     setGarmentName("");
@@ -32,12 +34,12 @@ function AddItemModal({ isOpen, onAddItem, onCloseModal }) {
       name: garmentName,
       imageUrl: garmentImage,
       weather: weatherType,
-    });
+    }).finally(() => setButtonText(""));
   }
 
   return (
     <ModalWithForm
-      buttonText="Add Garment"
+      buttonText={buttonText || "Add Garment"}
       title="New Garment"
       handleCloseClick={onCloseModal}
       isOpen={isOpen}

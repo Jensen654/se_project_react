@@ -8,7 +8,7 @@ function RegisterModal({ isOpen, handleCloseClick }) {
   const [avatarUrl, setAvatarUrl] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { handleRegistration, handleLoginClick } =
+  const { handleRegistration, handleLoginClick, buttonText, setButtonText } =
     useContext(AuthorizationContext);
 
   useEffect(() => {
@@ -41,12 +41,12 @@ function RegisterModal({ isOpen, handleCloseClick }) {
       avatar: avatarUrl,
       email: email,
       password: password,
-    });
+    }).finally(() => setButtonText(""));
   }
 
   return (
     <ModalWithForm
-      buttonText="Sign Up"
+      buttonText={buttonText || "Sign Up"}
       title="Sign Up"
       handleCloseClick={handleCloseClick}
       isOpen={isOpen}

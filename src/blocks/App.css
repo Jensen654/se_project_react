@@ -12,3 +12,7 @@
   font-family: "Cabinet Grotesk";
   font-weight: 700;
 }
+
+img {
+  object-fit: cover;
+}

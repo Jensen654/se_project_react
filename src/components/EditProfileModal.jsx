@@ -1,11 +1,13 @@
 import ModalWithForm from "./ModalWithForm";
 import { CurrentUserContext } from "../contexts/CurrentUserContext";
 import { useContext, useState } from "react";
+import { AuthorizationContext } from "../contexts/AuthorizationContext";
 
 function EditProfileModal({ isOpen, handleCloseClick }) {
   const { currentUser, handleEditProfile } = useContext(CurrentUserContext);
   const [name, setName] = useState(currentUser.name);
   const [avatarUrl, setAvatarUrl] = useState(currentUser.avatarUrl);
+  const { buttonText, setButtonText } = useContext(AuthorizationContext);
 
   function handleNameChange(event) {
     setName(event.target.value);
@@ -17,12 +19,12 @@ function EditProfileModal({ isOpen, handleCloseClick }) {
 
   function editProfile(e) {
     e.preventDefault();
-    handleEditProfile(name, avatarUrl);
+    handleEditProfile(name, avatarUrl).finally(() => setButtonText(""));
   }
 
   return (
     <ModalWithForm
-      buttonText="Save changes"
+      buttonText={buttonText || "Save changes"}
       title="Change profile data"
       handleCloseClick={handleCloseClick}
       isOpen={isOpen}

@@ -5,7 +5,8 @@ import { AuthorizationContext } from "../contexts/AuthorizationContext";
 function LoginModal({ isOpen, handleCloseClick }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { handleSignIn, handleSignUpClick } = useContext(AuthorizationContext);
+  const { handleSignIn, handleSignUpClick, buttonText, setButtonText } =
+    useContext(AuthorizationContext);
 
   useEffect(() => {
     setEmail("");
@@ -25,12 +26,12 @@ function LoginModal({ isOpen, handleCloseClick }) {
     handleSignIn({
       email: email,
       password: password,
-    });
+    }).finally(() => setButtonText(""));
   }
 
   return (
     <ModalWithForm
-      buttonText="Log In"
+      buttonText={buttonText || "Log In"}
       title="Log In"
       handleCloseClick={handleCloseClick}
       isOpen={isOpen}

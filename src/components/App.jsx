@@ -51,6 +51,7 @@ function App() {
     avatarUrl: "",
     _id: "",
   });
+  const [buttonText, setButtonText] = useState("");
 
   useEffect(() => {
     const jwt = localStorage.getItem("jwt");
@@ -79,7 +80,6 @@ function App() {
           latitude: data.latitude,
           longitude: data.longitude,
         };
-        console.log(location);
         getWeather(location, apiKey)
           .then((res) => {
             const filteredWeatherData = filterWeatherData(res);
@@ -139,8 +139,9 @@ function App() {
   };
 
   const handleAddItemSubmit = (newGarment) => {
+    setButtonText("Working");
     const jwt = localStorage.getItem("jwt");
-    postItem(newGarment, jwt)
+    return postItem(newGarment, jwt)
       .then((res) => {
         setClothingItems([res, ...clothingItems]);
         handleCloseClick();
@@ -149,7 +150,8 @@ function App() {
   };
 
   const handleSignIn = ({ email, password }) => {
-    signInUser(email, password)
+    setButtonText("Working");
+    return signInUser(email, password)
       .then((data) => {
         handleCloseClick();
         setIsLoggedIn(true);
@@ -165,7 +167,8 @@ function App() {
   };
 
   const handleRegistration = ({ name, avatar, email, password }) => {
-    registerUser(name, avatar, email, password)
+    setButtonText("Working");
+    return registerUser(name, avatar, email, password)
       .then(() => {
         handleSignIn({ email, password });
       })
@@ -193,8 +196,9 @@ function App() {
   };
 
   const handleEditProfile = (newName, newAvatarUrl) => {
+    setButtonText("Working");
     const jwt = localStorage.getItem("jwt");
-    editUser(jwt, newName, newAvatarUrl)
+    return editUser(jwt, newName, newAvatarUrl)
       .then(() => {
         handleCloseClick();
         setCurrentUser({
@@ -243,6 +247,8 @@ function App() {
               handleRegistration,
               handleLoginClick,
               handleSignUpClick,
+              buttonText,
+              setButtonText,
             }}
           >
             <div className="page__content">

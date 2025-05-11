@@ -7,6 +7,11 @@
   padding: 20px 0 32px 32px;
   display: flex;
   flex-direction: column;
+  position: absolute;
+  bottom: -30px;
+  width: 100%;
+  max-width: 498px;
+  background-color: white;
 }
 
 .modal__item-name {
@@ -28,6 +33,6 @@
   cursor: pointer;
   align-self: end;
   margin-top: 20px;
-  right: 32px;
+  right: 64px;
   bottom: 68px;
 }
