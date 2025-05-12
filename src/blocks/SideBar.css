@@ -43,3 +43,15 @@
   cursor: pointer;
   text-align: start;
 }
+
+@media screen and (max-width: 500px) {
+  .side-bar {
+    max-height: none;
+    align-self: center;
+    align-items: center;
+  }
+
+  .side-bar__button {
+    align-self: center;
+  }
+}

@@ -35,3 +35,14 @@
   list-style-type: none;
   gap: 20px;
 }
+
+@media screen and (max-width: 500px) {
+  .clothes__section {
+    margin: 0;
+    align-items: center;
+  }
+
+  .clothes__section_card-list {
+    justify-content: center;
+  }
+}

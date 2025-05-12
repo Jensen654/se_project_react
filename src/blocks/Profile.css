@@ -2,3 +2,9 @@
   padding: 19px 0 80px 0;
   display: flex;
 }
+
+@media screen and (max-width: 500px) {
+  .profile__page {
+    flex-direction: column;
+  }
+}

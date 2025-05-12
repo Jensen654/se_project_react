@@ -75,3 +75,14 @@ a {
   align-content: center;
   text-align: center;
 }
+
+@media screen and (max-width: 500px) {
+  .header {
+    flex-direction: column;
+    max-height: none;
+  }
+
+  .header__logo {
+    padding: 0;
+  }
+}

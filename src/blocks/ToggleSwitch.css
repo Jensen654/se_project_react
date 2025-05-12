@@ -66,3 +66,9 @@
 .toggle-temperature__label:hover .toggle-temperature__span {
   width: 30px;
 }
+
+@media screen and (max-width: 500px) {
+  .toggle-temperature__label {
+    margin: 0 0 20px 0;
+  }
+}
