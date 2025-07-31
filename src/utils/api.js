@@ -1,6 +1,6 @@
 const baseUrl =
   process.env.NODE_ENV === "production"
-    ? "https://api.jensenbeanwtwr.twilightparadox.com"
+    ? "https://se-project-express-zklj.onrender.com"
     : "http://localhost:3001";
 
 const handleResponse = (res) => {
